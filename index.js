@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const envJson = require("dotenv").config();
 
 //connecting mongoDB server
-const databaseString = process.env.DATABASE_PRODUCTION || envJson.parsed.DATABASE_PRODUCTION;
-const password =  process.env.DATABASE_PRODUCTION_PASSWORD || envJson.parsed.DATABASE_PRODUCTION_PASSWORD;
+const databaseString = process.env.DATABASE_PRODUCTION;
+const password =  process.env.DATABASE_PRODUCTION_PASSWORD;
 const DB = databaseString.replace("<PASSWORD>", password);
 mongoose
   .connect(DB, {
