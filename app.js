@@ -18,6 +18,6 @@ app.use(morgan('combined'));
 
 app.use(require("./controllers/auth/protectRoute").protect)
 // app.use("/login",require("./routes/authRoute"));  //login is not applicable
-app.use("/user",require("./routes/infoRoute"));
+app.use("/info",require("./routes/infoRoute"));
 
 module.exports = app;
