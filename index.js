@@ -17,6 +17,6 @@ mongoose
   });
 const PORT = 5300;
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log("connected at server port " + PORT);
 });
