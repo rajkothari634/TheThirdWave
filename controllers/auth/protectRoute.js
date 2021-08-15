@@ -18,7 +18,7 @@ exports.protect = async (req, res, next) => {
     }
     const decoded = await promisify(jwt.verify)(
       token,
-      `${envJson.parsed.JWT_SECRET}`
+      `${envJson.parsed.JWT_SECRET || process.env.JWT_SECRET}`
     );
     req.loggedUserEmail = decoded.email;
     const user = {
